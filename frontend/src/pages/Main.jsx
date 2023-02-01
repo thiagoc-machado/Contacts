@@ -2,9 +2,16 @@ import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import { ContactForm } from '../components/ContactForm';
 import { ItemContact } from '../components/ItemContact';
+import NewContact from '../components/NewContact';
+
+
 export const Main = () => {
   const [contactData, setContactData] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   //* get data local storage
   useEffect(() => {
@@ -64,23 +71,27 @@ export const Main = () => {
   };
 
   return (
-    <div className='box'>
-      <div className='container mt-5 mb-5'>
-        <div className='row'>
-            <ContactForm
+    <>
+      <div className='box'>
+        <button className='add' onClick={handleShow}>Add contact</button>
+        <div className='container mt-5 mb-5'>
+          <div className='row'>
+            {/* <ContactForm
               addContact={addContact}
               updateContact={updateContact}
               dataToEdit={dataToEdit}
               setDataToEdit={setDataToEdit}
-            />
+            /> */}
             <ItemContact
               contactData={contactData}
               setDataToEdit={setDataToEdit}
               deleteContact={deleteContact}
             />
           </div>
+        </div>
       </div>
-    </div>
+      <NewContact show = {show} handleClose={handleClose}/>
+    </>
   );
 };
 
