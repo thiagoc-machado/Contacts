@@ -6,13 +6,13 @@ import Main from "./pages/Main";
 
 
 function App() {
-	return (
-		<div className="App">
-			<Navbar />
-      <Main />
-			<Footer />
-		</div>
-	);
+	  return (
+		  <div className="App">
+			    <Navbar />
+          <Main />
+			    <Footer />
+		  </div>
+	  );
 }
 
 export default App;
