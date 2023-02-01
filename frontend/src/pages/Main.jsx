@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { ContactForm } from "../components/ContactForm";
+import { ItemContact } from "../components/ItemContact";
 export const Main = () => {
 	const [contactData, setContactData] = useState([]);
 	const [dataToEdit, setDataToEdit] = useState(null);
@@ -79,7 +80,11 @@ export const Main = () => {
 					dataToEdit={dataToEdit}
 					setDataToEdit={setDataToEdit}
 				/>
-				
+				<ItemContact
+					contactData={contactData}
+					setDataToEdit={setDataToEdit}
+					deleteContact={deleteContact}
+				/>
 			</div>
 		</div>
 	);

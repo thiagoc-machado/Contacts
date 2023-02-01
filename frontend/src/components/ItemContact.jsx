@@ -1,11 +1,27 @@
-import React from 'react';
+import React from "react";
+import { ContactInfo } from "./ContactInfo";
 
-const ItemContact = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-}
-
-export default ItemContact;
+export const ItemContact = ({
+	contactData,
+	setDataToEdit,
+	deleteContact,
+}) => {
+	return (
+		<div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			{contactData.length === 0 ? (
+				<span className="d-flex justify-content-center">
+					Not Contact 📞
+				</span>
+			) : (
+				contactData.map(contact => (
+					<ContactInfo
+						key={contact.id}
+						contact={contact}
+						setDataToEdit={setDataToEdit}
+						deleteContact={deleteContact}
+					/>
+				))
+			)}
+		</div>
+	);
+};
