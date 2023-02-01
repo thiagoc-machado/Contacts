@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { ContactForm } from "../components/ContactForm";
 export const Main = () => {
 	const [contactData, setContactData] = useState([]);
+	const [dataToEdit, setDataToEdit] = useState(null);
 
 	//* get data local storage
 	useEffect(() => {
@@ -71,7 +73,13 @@ export const Main = () => {
 	return (
 		<div className="container mt-5 mb-5">
 			<div className="row">
-
+				<ContactForm
+					addContact={addContact}
+					updateContact={updateContact}
+					dataToEdit={dataToEdit}
+					setDataToEdit={setDataToEdit}
+				/>
+				
 			</div>
 		</div>
 	);
