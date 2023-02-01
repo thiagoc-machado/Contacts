@@ -1,35 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 
 :root {
-  --primary-color: #b3bffc;
-  --secondary-color: #272727;
-  --info-color: #212738;
-  --black-color: #rgb(31, 30, 30);
-  --body-color: aliceblue;
-  --primary-font-color: #000;
-  --secundary-font-color: #fff;
+	--primary-color: #d0fcb3;
+	--secondary-color: #9bc59d;
+	--info-color: #1d408b;
+	--black-color: rgb(31, 30, 30);
+	--body-color: aliceblue;
 }
 
 body {
-  margin: 0;
-  font-family: 'Roboto Slab', 'sans-serif';
-  background-color: var(--body-color);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: "Roboto Slab", "sans-serif";
+	background-color: var(--body-color);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .navbar {
-  display: flex;
-  flex-direction: row;
-  background-color: var(--primary-color);
+	background-color: var(--info-color);
+	color: var(--primary-color)
+}
+.navbar a{
+	text-decoration: none;
+	color: var(--primary-color);
+	font-weight: 800;
+}
+.form-control:focus {
+	border-color: var(--info-color);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+		0 0 8px rgb(33, 39, 56);
 }
 
+.alert-info {
+	background-color: var(--info-color);
+}
+
+.btn-primary {
+	background-color: var(--secondary-color);
+	border-color: var(--secondary-color);
+	color: var(--black-color);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+	background-color: var(--primary-color);
+	border-color: var(--primary-color);
+	color: var(--black-color);
+}
 .footer {
   bottom: 0;
   position: fixed;
   width: 100%;
   left: 0;
   right: 0;
-  background-color: var(--secondary-color);
-  color: var(--secundary-font-color);
+  background-color: var(--black-color);
+  color: var(--body-color);
 }

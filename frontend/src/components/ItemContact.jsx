@@ -10,7 +10,7 @@ export const ItemContact = ({
 		<div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			{contactData.length === 0 ? (
 				<span className="d-flex justify-content-center">
-					Not Contact 📞
+					Not Contact
 				</span>
 			) : (
 				contactData.map(contact => (
